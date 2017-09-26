@@ -2,7 +2,7 @@
 	
 	namespace DragosRoua\SteemApiTools;
 	use WebSocket\Client;
-	use DragosRoua\SteemApuTools\SteemLayer
+	use DragosRoua\SteemApiTools\SteemLayer;
 
 class SteemAPI
 {
@@ -132,15 +132,9 @@ class SteemAPI
         }
         file_put_contents($call . '_data.txt',$data_for_file);
         return $data;
-/*
-        $start = @file_get_contents($call . '_start.txt');
-        if (!$start) {
-            $start = 0;
-            file_put_contents($call . '_start.txt',$start);
-        }
-*/
+
     }
-    // functions for filtering through account history
+   
     public function getResultInfo($blocks)
     {
         $max_timestamp = 0;
@@ -217,6 +211,7 @@ class SteemAPI
         return $data;
     }
     private $dynamic_global_properties = array();
+    
     public function getProps($refresh = false)
     {
         if ($refresh || count($this->dynamic_global_properties) == 0) {
@@ -224,6 +219,7 @@ class SteemAPI
         }
         return $this->dynamic_global_properties;
     }
+    
     public function getConversionRate() {
         $props = $this->getProps();
         $values = array(
@@ -232,6 +228,7 @@ class SteemAPI
         );
         return $values;
     }
+    
     public function vest2sp($value)
     {
         $values = $this->getConversionRate();
