@@ -1,0 +1,24 @@
+{
+    "name": "dragos-roua/steem-api-tools",
+    "description": "Tools to interact with the Steem blockchain.",
+    "keywords": ["steemit", "blockchain", "package"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dragos Roua",
+            "email": "dragosroua@gmail.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=5.4"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "DragosRoua\\SteemApiTools\\": "src/"
+        }
+    }
+}
