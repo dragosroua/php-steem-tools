@@ -13,14 +13,17 @@ Features
 Dependencies
 ------------
 
-Websocket
+Websocket: "textalk/websocket": "1.0.*" (added by default to composer.json).
 
 Installation
 ------------
 
+`composer require dragos-roua/steem-api-tools`
 
 How to contribute
 -----------------
+
+Fork this, implement an awesome feature, test it and then submit a pull request.
 
 
 Projects using Steem Api Tools
