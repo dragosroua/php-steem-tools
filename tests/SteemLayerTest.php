@@ -18,7 +18,7 @@ class SteemLayerTest extends PHPUnit_Framework_TestCase{
   *
   */
   public function testIsThereAnySyntaxError(){
-	$var = new DragosRoua\SteemApiTools\SteemLayer;
+	$var = new DragosRoua\PHPSteemTools\SteemLayer;
 	$this->assertTrue(is_object($var));
 	unset($var);
   }
@@ -32,7 +32,7 @@ class SteemLayerTest extends PHPUnit_Framework_TestCase{
   */
   
   public function testgetRequest(){
-	$var = new DragosRoua\SteemApiTools\SteemLayer;
+	$var = new DragosRoua\PHPSteemTools\SteemLayer;
 	$method = 'method';
 	$params = 'params';
 	$request = array(

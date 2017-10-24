@@ -1,7 +1,7 @@
-Steem Api Tools
+PHP Steem Tools
 =========================
 
-A collection of PHP tools to interact with the [Steem](https://github.com/steemit/steem) blockchain. **Steem Api Tools** is in a very early stage.
+A collection of PHP tools to interact with the [Steem](https://github.com/steemit/steem) blockchain. **PHP Steem Tools** is in a very early stage.
 
 Features
 --------
@@ -18,7 +18,7 @@ Websocket: "textalk/websocket": "1.0.*" (added by default to composer.json).
 Installation
 ------------
 
-`composer require dragos-roua/steem-api-tools`
+`composer require dragos-roua/php-steem-tools`
 
 How to contribute
 -----------------
@@ -26,7 +26,7 @@ How to contribute
 Fork this, implement an awesome feature, test it and then submit a pull request.
 
 
-Projects using Steem Api Tools
+Projects using PHP Steem Tools
 ------------------------------
 
 * [steem.supply](http://steem.supply)

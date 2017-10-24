@@ -1,5 +1,5 @@
 {
-    "name": "dragos-roua/steem-api-tools",
+    "name": "dragos-roua/php-steem-tools",
     "description": "Tools to interact with the Steem blockchain.",
     "keywords": ["steemit", "blockchain", "package"],
     "license": "MIT",
@@ -19,7 +19,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "DragosRoua\\SteemApiTools\\": "src/"
+            "DragosRoua\\PHPSteemTools\\": "src/"
         }
     }
 }
