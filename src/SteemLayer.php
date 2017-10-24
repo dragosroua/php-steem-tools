@@ -1,10 +1,10 @@
 <?php 
 	
-	namespace DragosRoua\SteemApiTools;
+	namespace DragosRoua\PHPSteemTools;
 	use WebSocket\Client;
 
 /**
-*  SteemLayer - SteemApiTools transport class
+*  SteemLayer - PHPSteemtools transport class
 *
 * This class is responisble for making the RPC calls to the blockchain
 * it can use cURL or the WebSocket client (recommended)

@@ -1,8 +1,8 @@
 <?php
 	
-	namespace DragosRoua\SteemApiTools;
+	namespace DragosRoua\PHPSteemTools;
 	use WebSocket\Client;
-	use DragosRoua\SteemApiTools\SteemLayer;
+	use DragosRoua\PHPSteemTools\SteemLayer;
 
 class SteemAPI
 {
