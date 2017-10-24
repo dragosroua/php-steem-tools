@@ -246,7 +246,6 @@ class SteemAPI
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
-		// This is what solved the issue (Accepting gzip encoding)
 		curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");     
 		$response = curl_exec($ch);
 		curl_close($ch);
@@ -262,7 +261,6 @@ class SteemAPI
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
-		// This is what solved the issue (Accepting gzip encoding)
 		curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");     
 		$response = curl_exec($ch);
 		curl_close($ch);
