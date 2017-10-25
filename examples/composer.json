@@ -1,0 +1,6 @@
+{
+    "minimum-stability" : "dev",
+    "require": {
+        "dragos-roua/php-steem-tools": "v0.0.4-alpha"
+    }
+}

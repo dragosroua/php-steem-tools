@@ -20,6 +20,11 @@ Installation
 
 `composer require dragos-roua/php-steem-tools`
 
+Examples
+--------
+
+There is a small example in the `examples` folder, I will add more as more use cases will appear.
+
 How to contribute
 -----------------
 
