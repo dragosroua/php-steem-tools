@@ -15,7 +15,7 @@ class SteemLayer {
 
     private $debug = false;
     // replace with your own seed / rpc node URL
-    private $webservice_url = 'steemd.steemitdev.com';
+    private $webservice_url = 'steemd.steemitdev.com';    
     private $throw_exception = false;
     private $scheme = 'https://';
 

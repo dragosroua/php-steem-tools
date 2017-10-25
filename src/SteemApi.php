@@ -9,9 +9,9 @@ class SteemApi
     private $SteemLayer;
     private $api_ids = array();
     
-    public function __construct()
+    public function __construct($config = null)
     {
-        $this->SteemLayer = new SteemLayer();
+        $this->SteemLayer = new SteemLayer($config);
     }
     
     public function getDiscussionsByAuthorBeforeDate($params, $transport='curl'){
