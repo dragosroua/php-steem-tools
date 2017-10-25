@@ -4,7 +4,7 @@
 	use WebSocket\Client;
 	use DragosRoua\PHPSteemTools\SteemLayer;
 
-class SteemAPI
+class SteemApi
 {
     private $SteemLayer;
     private $api_ids = array();
