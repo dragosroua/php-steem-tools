@@ -23,7 +23,7 @@ Installation
 Examples
 --------
 
-There is a small example in the `examples` folder, I will add more as more use cases will appear.
+There are a few small examples in the `examples` folder, I will add more as more use cases will appear.
 
 How to contribute
 -----------------
