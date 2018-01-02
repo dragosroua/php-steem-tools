@@ -22,6 +22,8 @@ require __DIR__ . '/vendor/autoload.php';
 		else 
 		{
 			$total_value = 0;
+			$voter_array = array();
+			$voter_number = array();
 			
 			foreach($remote_content as $rkey => $rvalue){
 				if($rvalue['pending_payout_value'] !== '0.000 SBD' && $rvalue['max_accepted_payout'] != 0){

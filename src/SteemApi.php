@@ -20,7 +20,7 @@ class SteemApi
     }
     
     public function getRepliesByLastUpdate($params){
-	    $result = $this->steemlayer->call('get_replies_by_last_update', $params);
+	    $result = $this->SteemLayer->call('get_replies_by_last_update', $params);
         return $result;
     }
     
@@ -46,19 +46,19 @@ class SteemApi
     
     public function getContent($params)
     {
-        $result = $this->steemlayer->call('get_content', $params);
+        $result = $this->SteemLayer->call('get_content', $params);
         return $result;
     }
     
     public function getContentReplies($params)
     {
-        $result = $this->steemlayer->call('get_content_replies', $params);
+        $result = $this->SteemLayer->call('get_content_replies', $params);
         return $result;
     }
     
     public function getDiscussionsByComments($params, $transport='curl')
     {
-        $result = $this->steemlayer->call('get_discussions_by_comments', $params, $transport);
+        $result = $this->SteemLayer->call('get_discussions_by_comments', $params, $transport);
         return $result;
     }   
     public function getAccountVotes($params)
@@ -69,7 +69,7 @@ class SteemApi
     
     public function getAccountHistory($params)
     {
-        $result = $this->steemlayer->call('get_account_history', $params);
+        $result = $this->SteemLayer->call('get_account_history', $params);
         return $result;
     }
     
@@ -83,7 +83,7 @@ class SteemApi
         $limit = 100;
         $followers = array();
         $params = array($this->getFollowAPIID(),'get_followers',array($account,$start,'blog',$limit));
-        $followers = $this->steemlayer->call('call', $params);
+        $followers = $this->SteemLayer->call('call', $params);
         if (count($followers) == $limit) {
             $last_account = $followers[$limit-1];
             $more_followers = $this->getFollowers($account, $last_account['follower']);
@@ -111,7 +111,7 @@ class SteemApi
         if (array_key_exists($api_name, $this->api_ids)) {
             return $this->api_ids[$api_name];
         }
-        $response = $this->steemlayer->call('call', array(1,'get_api_by_name',array($api_name)));
+        $response = $this->SteemLayer->call('call', array(1,'get_api_by_name',array($api_name)));
         $this->api_ids[$api_name] = $response;
         return $response;
     }
@@ -215,7 +215,7 @@ class SteemApi
     public function getProps($refresh = false)
     {
         if ($refresh || count($this->dynamic_global_properties) == 0) {
-            $this->dynamic_global_properties = $this->steemlayer->call('get_dynamic_global_properties', array());
+            $this->dynamic_global_properties = $this->SteemLayer->call('get_dynamic_global_properties', array());
         }
         return $this->dynamic_global_properties;
     }
