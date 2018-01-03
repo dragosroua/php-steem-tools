@@ -1,12 +1,8 @@
 <?php
-
 require __DIR__ . '/vendor/autoload.php';
-
 $config['webservice_url'] = 'steemd.minnowsupportproject.org';
 $api = new DragosRoua\PHPSteemTools\SteemApi($config);
-
-$author = "utopian-io";
-
+$author = "dragosroua";
 /**
 	
 	Get the number of folloers, since it's resource intensive, we're using a basic cache mechanism
@@ -14,7 +10,6 @@ $author = "utopian-io";
 	*/
 $follower_count  = $api->getFollowerCount($account);
 $returned_follower_count = $follower_count['followers'];
-
 $cache_folder = "./";
 $file_name = $cache_folder.$author.".txt";
 $cache_interval = 86400; // seconds for the cache file to live
@@ -48,7 +43,6 @@ else {
 	fclose($handle);
 	$returned_follower_count = $follower_count;
 }
-
 /**
 	
 	Get content for the last 7 days and calculate the number of votes
@@ -59,17 +53,14 @@ date_default_timezone_set('UTC');
 $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s'); 
 $date_8days_ago = date('Y-m-d\TH:i:s', strtotime('-8 days', strtotime($dateNow)));
 $params = [$author, '', $date_8days_ago, 100];
-
 $remote_content = $api->getDiscussionsByAuthorBeforeDate($params, 'websocket');	
 //print_r($remote_content);
-
 if(isset($remote_content)){
 	if (array_key_exists('error', $remote_content)){
 		echo "Something is not ok. You should investigate more.\n";
 	}
 	else 
 	{
-
 		$votes_number = array();
 		$total_posts = 0;
 		
@@ -101,9 +92,7 @@ if(isset($remote_content)){
 		echo "Total followers: ".$returned_follower_count."\n";
 		
 		echo "**************\n";
-		echo "Conversion rate: ".number_format((count($votes_number) * 100)/$returned_follower_count, 2)."%\n**************\n";
+		echo "Engagement rate: ".number_format((count($votes_number) * 100)/$returned_follower_count, 2)."%\n**************\n";
 	}
 }
-
-
 ?>
