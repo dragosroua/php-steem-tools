@@ -792,12 +792,6 @@ class SteemApi
 			return $result;
 	}
 
-	public function getOrderBook ($params)
-	{
-			$result = $this->SteemLayer->call('get_order_book', $params);
-			return $result;
-	}
-
 	public function getTradeHistory ($params)
 	{
 			$result = $this->SteemLayer->call('get_trade_history', $params);
