@@ -1,5 +1,5 @@
 <?php
-	
+
 	namespace DragosRoua\PHPSteemTools;
 	use WebSocket\Client;
 	use DragosRoua\PHPSteemTools\SteemLayer;
@@ -8,22 +8,22 @@ class SteemApi
 {
     private $SteemLayer;
     private $api_ids = array();
-    
+
     public function __construct($config = null)
     {
         $this->SteemLayer = new SteemLayer($config);
     }
-    
+
     public function getDiscussionsByAuthorBeforeDate($params, $transport='curl'){
 	    $result = $this->SteemLayer->call('get_discussions_by_author_before_date', $params, $transport);
         return $result;
     }
-    
+
     public function getRepliesByLastUpdate($params){
 	    $result = $this->SteemLayer->call('get_replies_by_last_update', $params);
         return $result;
     }
-    
+
     public function getCurrentMedianHistoryPrice($currency = 'STEEM')
     {
         // TEMP: until I figure this out...
@@ -43,36 +43,37 @@ class SteemApi
         }
         return $price;
     }
-    
+
     public function getContent($params)
     {
         $result = $this->SteemLayer->call('get_content', $params);
         return $result;
     }
-    
+
     public function getContentReplies($params)
     {
         $result = $this->SteemLayer->call('get_content_replies', $params);
         return $result;
     }
-    
+
     public function getDiscussionsByComments($params, $transport='curl')
     {
         $result = $this->SteemLayer->call('get_discussions_by_comments', $params, $transport);
         return $result;
-    }   
+    }
+
     public function getAccountVotes($params)
     {
         $result = $this->SteemLayer->call('get_account_votes', $params);
         return $result;
     }
-    
+
     public function getAccountHistory($params)
     {
         $result = $this->SteemLayer->call('get_account_history', $params);
         return $result;
     }
-    
+
     public function getFollowerCount($account)
     {
         $followers = $this->getFollowers($account);
@@ -92,11 +93,13 @@ class SteemApi
         }
         return $followers;
     }
+
     public function lookupAccounts($params)
     {
         $accounts = $this->SteemLayer->call('lookup_accounts', $params);
         return $accounts;
     }
+
     public function getAccounts($accounts)
     {
         $get_accounts_results = $this->SteemLayer->call('get_accounts', array($accounts));
@@ -134,7 +137,7 @@ class SteemApi
         return $data;
 
     }
-   
+
     public function getResultInfo($blocks)
     {
         $max_timestamp = 0;
@@ -211,7 +214,7 @@ class SteemApi
         return $data;
     }
     private $dynamic_global_properties = array();
-    
+
     public function getProps($refresh = false)
     {
         if ($refresh || count($this->dynamic_global_properties) == 0) {
@@ -219,7 +222,7 @@ class SteemApi
         }
         return $this->dynamic_global_properties;
     }
-    
+
     public function getConversionRate() {
         $props = $this->getProps();
         $values = array(
@@ -228,15 +231,15 @@ class SteemApi
         );
         return $values;
     }
-    
+
     public function vest2sp($value)
     {
         $values = $this->getConversionRate();
         return round($values['total_vest_steem'] * ($value / $values['total_vests']), 3);
     }
-    
+
     /* exchange related functions */
-	
+
 	public function getCurrentValue($coin){
 		// calls CoinMarketCap Api and returns the current curse
 		$url = "https://api.coinmarketcap.com/v1/ticker/".$coin."/";
@@ -246,12 +249,12 @@ class SteemApi
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
-		curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");     
+		curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");
 		$response = curl_exec($ch);
 		curl_close($ch);
 		return $response;
 	}
-	
+
 	public function getUserJSONData($user){
 		// calls CoinMarketCap Api and returns the current curse
 		$url = "https://steemit.com/@".$user.".json";
@@ -261,11 +264,250 @@ class SteemApi
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
-		curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");     
+		curl_setopt($ch, CURLOPT_ENCODING, "gzip,deflate");
 		$response = curl_exec($ch);
 		curl_close($ch);
 		return $response;
-	}    
-    
-    
+	}
+
+
+	// Contributions by @profchydon
+	// Getting this tool up to date with all available methods on api.steemjs documentation
+
+	public function setSubscribeCallback ($params)
+	{
+			$result = $this->SteemLayer->call('set_subscribe_callback', $params);
+			return $result;
+	}
+
+	public function setPendingTransactionCallback ($params)
+	{
+			$result = $this->SteemLayer->call('set_pending_transaction_callback', $params);
+			return $result;
+	}
+
+	public function setBlockAppliedCallback ($params)
+	{
+			$result = $this->SteemLayer->call('set_block_applied_callback', $params);
+			return $result;
+	}
+
+	public function cancelAllSubscriptions ($params)
+	{
+			$result = $this->SteemLayer->call('cancel_all_subscriptions', $params);
+			return $result;
+	}
+
+	public function getTrendingTags ($params)
+	{
+			$result = $this->SteemLayer->call('get_trending_tags', $params);
+			return $result;
+	}
+
+	public function getTagsUsedByAuthor ($params)
+	{
+			$result = $this->SteemLayer->call('get_tags_used_by_author', $params);
+			return $result;
+	}
+
+	public function getPostDiscussionsByPayout ($params)
+	{
+			$result = $this->SteemLayer->call('get_post_discussions_by_payout', $params);
+			return $result;
+	}
+
+	public function getCommentDiscussionsByPayout ($params)
+	{
+			$result = $this->SteemLayer->call('get_comment_discussions_by_payout', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByTrending ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_trending', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByTrending30 ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_trending30', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByCreated ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_created', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByActive ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_active', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByCashout ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_cashout', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByPayout ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_payout', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByVotes ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_votes', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByChildren ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_children', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByHot ($params)
+	{
+			$result = $this->SteemLayer->call('get_post_discussions_by_hot', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByFeed ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_feed', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByBlog ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_blog', $params);
+			return $result;
+	}
+
+	public function getDiscussionsByPromoted ($params)
+	{
+			$result = $this->SteemLayer->call('get_discussions_by_promoted', $params);
+			return $result;
+	}
+
+	public function getBlockHeader ($params)
+	{
+			$result = $this->SteemLayer->call('get_block_header', $params);
+			return $result;
+	}
+
+	public function getBlock ($params)
+	{
+			$result = $this->SteemLayer->call('get_block', $params);
+			return $result;
+	}
+
+	public function getOpsInBlock ($params)
+	{
+			$result = $this->SteemLayer->call('get_ops_in_block', $params);
+			return $result;
+	}
+
+	public function getState ($params)
+	{
+			$result = $this->SteemLayer->call('get_state', $params);
+			return $result;
+	}
+
+	public function getTrendingCategories ($params)
+	{
+			$result = $this->SteemLayer->call('get_trending_categories', $params);
+			return $result;
+	}
+
+	public function getBestCategories ($params)
+	{
+			$result = $this->SteemLayer->call('get_best_categories', $params);
+			return $result;
+	}
+
+	public function getActiveCategories ($params)
+	{
+			$result = $this->SteemLayer->call('get_active_categories', $params);
+			return $result;
+	}
+
+	public function getRecentCategories ($params)
+	{
+			$result = $this->SteemLayer->call('get_recent_categories', $params);
+			return $result;
+	}
+
+	public function getConfig ($params)
+	{
+			$result = $this->SteemLayer->call('get_config', $params);
+			return $result;
+	}
+
+	public function getDynamicGlobalProperties ($params)
+	{
+			$result = $this->SteemLayer->call('get_dynamic_global_properties', $params);
+			return $result;
+	}
+
+	public function getChainProperties ($params)
+	{
+			$result = $this->SteemLayer->call('get_chain_properties', $params);
+			return $result;
+	}
+
+	public function getFeedHistory ($params)
+	{
+			$result = $this->SteemLayer->call('get_feed_history', $params);
+			return $result;
+	}
+
+	public function getWitnessSchedule ($params)
+	{
+			$result = $this->SteemLayer->call('get_witness_schedule', $params);
+			return $result;
+	}
+
+	public function getHardforkVersion ($params)
+	{
+			$result = $this->SteemLayer->call('get_hardfork_version', $params);
+			return $result;
+	}
+
+	public function getNextScheduledHardfork ($params)
+	{
+			$result = $this->SteemLayer->call('get_next_scheduled_hardfork', $params);
+			return $result;
+	}
+
+	public function getKeyReferences ($params)
+	{
+			$result = $this->SteemLayer->call('get_key_references', $params);
+			return $result;
+	}
+
+	public function getAccountReferences ($params)
+	{
+			$result = $this->SteemLayer->call('get_account_references', $params);
+			return $result;
+	}
+
+	public function lookupAccountNames ($params)
+	{
+			$result = $this->SteemLayer->call('lookup_account_names', $params);
+			return $result;
+	}
+
+	public function lookupAccounts ($params)
+	{
+			$result = $this->SteemLayer->call('lookup_accounts', $params);
+			return $result;
+	}
+
+	// start here
+
 }
