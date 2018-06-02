@@ -502,12 +502,324 @@ class SteemApi
 			return $result;
 	}
 
-	public function lookupAccounts ($params)
+	// start here
+
+	public function getAccountCount ($params)
 	{
-			$result = $this->SteemLayer->call('lookup_accounts', $params);
+			$result = $this->SteemLayer->call('get_account_count', $params);
 			return $result;
 	}
 
-	// start here
+	public function getConversionRequests ($params)
+	{
+			$result = $this->SteemLayer->call('get_conversion_requests', $params);
+			return $result;
+	}
+
+	public function getOwnerHistory ($params)
+	{
+			$result = $this->SteemLayer->call('get_owner_history', $params);
+			return $result;
+	}
+
+	public function getRecoveryRequest ($params)
+	{
+			$result = $this->SteemLayer->call('get_recovery_request', $params);
+			return $result;
+	}
+
+	public function getEscrow ($params)
+	{
+			$result = $this->SteemLayer->call('get_escrow', $params);
+			return $result;
+	}
+
+	public function getWithdrawRoutes ($params)
+	{
+			$result = $this->SteemLayer->call('get_withdraw_routes', $params);
+			return $result;
+	}
+
+	public function getAccountBandwidth ($params)
+	{
+			$result = $this->SteemLayer->call('get_account_bandwidth', $params);
+			return $result;
+	}
+
+	public function getSavingsWithdrawFrom ($params)
+	{
+			$result = $this->SteemLayer->call('get_savings_withdraw_from', $params);
+			return $result;
+	}
+
+	public function getSavingsWithdrawTo ($params)
+	{
+			$result = $this->SteemLayer->call('get_savings_withdraw_to', $params);
+			return $result;
+	}
+
+	public function getOrderBook ($params)
+	{
+			$result = $this->SteemLayer->call('get_order_book', $params);
+			return $result;
+	}
+
+	public function getOpenOrders ($params)
+	{
+			$result = $this->SteemLayer->call('get_open_orders', $params);
+			return $result;
+	}
+
+	public function getLiquidityQueue ($params)
+	{
+			$result = $this->SteemLayer->call('get_liquidity_queue', $params);
+			return $result;
+	}
+
+	public function getTransactionHex ($params)
+	{
+			$result = $this->SteemLayer->call('get_transaction_hex', $params);
+			return $result;
+	}
+
+	public function getTransaction ($params)
+	{
+			$result = $this->SteemLayer->call('get_transaction', $params);
+			return $result;
+	}
+
+	public function getRequiredSignatures ($params)
+	{
+			$result = $this->SteemLayer->call('get_required_signatures', $params);
+			return $result;
+	}
+
+	public function getPotentialSignatures ($params)
+	{
+			$result = $this->SteemLayer->call('get_potential_signatures', $params);
+			return $result;
+	}
+
+	public function verifyAuthority ($params)
+	{
+			$result = $this->SteemLayer->call('verify_authority', $params);
+			return $result;
+	}
+
+	public function verifyAccountAuthority ($params)
+	{
+			$result = $this->SteemLayer->call('verify_account_authority', $params);
+			return $result;
+	}
+
+	public function getActiveVotes ($params)
+	{
+			$result = $this->SteemLayer->call('get_active_votes', $params);
+			return $result;
+	}
+
+	public function getAccountVotes ($params)
+	{
+			$result = $this->SteemLayer->call('get_account_votes', $params);
+			return $result;
+	}
+
+	public function getWitnesses ($params)
+	{
+			$result = $this->SteemLayer->call('get_witnesses', $params);
+			return $result;
+	}
+
+	public function getWitnessByAccount ($params)
+	{
+			$result = $this->SteemLayer->call('get_witness_by_account', $params);
+			return $result;
+	}
+
+	public function getWitnessesByVote ($params)
+	{
+			$result = $this->SteemLayer->call('get_witnesses_by_vote', $params);
+			return $result;
+	}
+
+	public function lookupWitnessAccounts ($params)
+	{
+			$result = $this->SteemLayer->call('lookup_witness_accounts', $params);
+			return $result;
+	}
+
+	public function getWitnessCount ($params)
+	{
+			$result = $this->SteemLayer->call('get_witness_count', $params);
+			return $result;
+	}
+
+	public function getActiveWitnesses ($params)
+	{
+			$result = $this->SteemLayer->call('get_active_witnesses', $params);
+			return $result;
+	}
+
+	public function getMinerQueue ($params)
+	{
+			$result = $this->SteemLayer->call('get_miner_queue', $params);
+			return $result;
+	}
+
+	public function getRewardFund ($params)
+	{
+			$result = $this->SteemLayer->call('get_reward_fund', $params);
+			return $result;
+	}
+
+	public function getVestingDelegations ($params)
+	{
+			$result = $this->SteemLayer->call('get_vesting_delegations', $params);
+			return $result;
+	}
+
+	public function login ($params)
+	{
+			$result = $this->SteemLayer->call('login', $params);
+			return $result;
+	}
+
+	public function getApiByName ($params)
+	{
+			$result = $this->SteemLayer->call('get_api_by_name', $params);
+			return $result;
+	}
+
+	public function getVersion ($params)
+	{
+			$result = $this->SteemLayer->call('get_version', $params);
+			return $result;
+	}
+
+	public function getFollowing ($params)
+	{
+			$result = $this->SteemLayer->call('get_following', $params);
+			return $result;
+	}
+
+	public function getFollowCount ($params)
+	{
+			$result = $this->SteemLayer->call('get_follow_count', $params);
+			return $result;
+	}
+
+	public function getFeedEntries ($params)
+	{
+			$result = $this->SteemLayer->call('get_feed_entries', $params);
+			return $result;
+	}
+
+	public function getFeed ($params)
+	{
+			$result = $this->SteemLayer->call('get_feed', $params);
+			return $result;
+	}
+
+	public function getBlogEntries ($params)
+	{
+			$result = $this->SteemLayer->call('get_blog_entries', $params);
+			return $result;
+	}
+
+	public function getBlog ($params)
+	{
+			$result = $this->SteemLayer->call('get_blog', $params);
+			return $result;
+	}
+
+	public function getAccountReputations ($params)
+	{
+			$result = $this->SteemLayer->call('get_account_reputations', $params);
+			return $result;
+	}
+
+	public function getRebloggedBy ($params)
+	{
+			$result = $this->SteemLayer->call('get_reblogged_by', $params);
+			return $result;
+	}
+
+	public function getBlogAuthors ($params)
+	{
+			$result = $this->SteemLayer->call('get_blog_authors', $params);
+			return $result;
+	}
+
+	public function broadcastTransaction ($params)
+	{
+			$result = $this->SteemLayer->call('broadcast_transaction', $params);
+			return $result;
+	}
+
+	public function broadcastTransactionWithCallback ($params)
+	{
+			$result = $this->SteemLayer->call('broadcast_transaction_with_callback', $params);
+			return $result;
+	}
+
+	public function broadcastTransactionSynchronous ($params)
+	{
+			$result = $this->SteemLayer->call('broadcast_transaction_synchronous', $params);
+			return $result;
+	}
+
+	public function broadcastBlock ($params)
+	{
+			$result = $this->SteemLayer->call('broadcast_block', $params);
+			return $result;
+	}
+
+	public function setMaxBlockAge ($params)
+	{
+			$result = $this->SteemLayer->call('set_max_block_age', $params);
+			return $result;
+	}
+
+	public function getTicker ($params)
+	{
+			$result = $this->SteemLayer->call('get_ticker', $params);
+			return $result;
+	}
+
+	public function getVolume ($params)
+	{
+			$result = $this->SteemLayer->call('get_volume', $params);
+			return $result;
+	}
+
+	public function getOrderBook ($params)
+	{
+			$result = $this->SteemLayer->call('get_order_book', $params);
+			return $result;
+	}
+
+	public function getTradeHistory ($params)
+	{
+			$result = $this->SteemLayer->call('get_trade_history', $params);
+			return $result;
+	}
+
+	public function getRecentTrades ($params)
+	{
+			$result = $this->SteemLayer->call('get_recent_trades', $params);
+			return $result;
+	}
+
+	public function getMarketHistory ($params)
+	{
+			$result = $this->SteemLayer->call('get_market_history', $params);
+			return $result;
+	}
+
+	public function getMarketHistoryBuckets ($params)
+	{
+			$result = $this->SteemLayer->call('get_market_history_buckets', $params);
+			return $result;
+	}
 
 }
