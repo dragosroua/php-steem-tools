@@ -618,12 +618,6 @@ class SteemApi
 			return $result;
 	}
 
-	public function getAccountVotes ($params)
-	{
-			$result = $this->SteemLayer->call('get_account_votes', $params);
-			return $result;
-	}
-
 	public function getWitnesses ($params)
 	{
 			$result = $this->SteemLayer->call('get_witnesses', $params);
@@ -813,6 +807,301 @@ class SteemApi
 	public function getMarketHistoryBuckets ($params)
 	{
 			$result = $this->SteemLayer->call('get_market_history_buckets', $params);
+			return $result;
+	}
+
+	// Broadcast Methods
+	public function vote ($params)
+	{
+			$result = $this->SteemLayer->call('vote', $params);
+			return $result;
+	}
+
+	public function comment ($params)
+	{
+			$result = $this->SteemLayer->call('comment', $params);
+			return $result;
+	}
+
+	public function transfer ($params)
+	{
+			$result = $this->SteemLayer->call('transfer', $params);
+			return $result;
+	}
+
+	public function transferToVesting ($params)
+	{
+			$result = $this->SteemLayer->call('transfer_to_vesting', $params);
+			return $result;
+	}
+
+	public function withdrawVesting ($params)
+	{
+			$result = $this->SteemLayer->call('withdraw_vesting', $params);
+			return $result;
+	}
+
+	public function limitOrderCreate ($params)
+	{
+			$result = $this->SteemLayer->call('limit_order_create', $params);
+			return $result;
+	}
+
+	public function limitOrderCancel ($params)
+	{
+			$result = $this->SteemLayer->call('limit_order_cancel', $params);
+			return $result;
+	}
+
+	public function price ($params)
+	{
+			$result = $this->SteemLayer->call('price', $params);
+			return $result;
+	}
+
+	public function feedPublish ($params)
+	{
+			$result = $this->SteemLayer->call('feed_publish', $params);
+			return $result;
+	}
+
+	public function convert ($params)
+	{
+			$result = $this->SteemLayer->call('convert', $params);
+			return $result;
+	}
+
+	public function accountCreate ($params)
+	{
+			$result = $this->SteemLayer->call('account_create', $params);
+			return $result;
+	}
+
+	public function accountUpdate ($params)
+	{
+			$result = $this->SteemLayer->call('account_update', $params);
+			return $result;
+	}
+
+	public function witnessUpdate ($params)
+	{
+			$result = $this->SteemLayer->call('witness_update', $params);
+			return $result;
+	}
+
+	public function accountWitnessVote ($params)
+	{
+			$result = $this->SteemLayer->call('account_witness_vote', $params);
+			return $result;
+	}
+
+	public function accountWitnessProxy ($params)
+	{
+			$result = $this->SteemLayer->call('account_witness_proxy', $params);
+			return $result;
+	}
+
+	public function pow ($params)
+	{
+			$result = $this->SteemLayer->call('pow', $params);
+			return $result;
+	}
+
+	public function custom ($params)
+	{
+			$result = $this->SteemLayer->call('custom', $params);
+			return $result;
+	}
+
+	public function deleteComment ($params)
+	{
+			$result = $this->SteemLayer->call('delete_comment', $params);
+			return $result;
+	}
+
+	public function customJson ($params)
+	{
+			$result = $this->SteemLayer->call('custom_json', $params);
+			return $result;
+	}
+
+	public function commentOptions ($params)
+	{
+			$result = $this->SteemLayer->call('comment_options', $params);
+			return $result;
+	}
+
+	public function setWithdrawVestingRoute ($params)
+	{
+			$result = $this->SteemLayer->call('set_withdraw_vesting_route', $params);
+			return $result;
+	}
+
+	public function limitOrderCreate2 ($params)
+	{
+			$result = $this->SteemLayer->call('limit_order_create2', $params);
+			return $result;
+	}
+
+	public function challengeAuthority ($params)
+	{
+			$result = $this->SteemLayer->call('challenge_authority', $params);
+			return $result;
+	}
+
+	public function proveAuthority ($params)
+	{
+			$result = $this->SteemLayer->call('prove_authority', $params);
+			return $result;
+	}
+
+	public function requestAccountRecovery ($params)
+	{
+			$result = $this->SteemLayer->call('request_account_recovery', $params);
+			return $result;
+	}
+
+	public function recoverAccount ($params)
+	{
+			$result = $this->SteemLayer->call('recover_account', $params);
+			return $result;
+	}
+
+	public function changeRecoveryAccount ($params)
+	{
+			$result = $this->SteemLayer->call('change_recovery_account', $params);
+			return $result;
+	}
+
+	public function escrowTransfer ($params)
+	{
+			$result = $this->SteemLayer->call('escrow_transfer', $params);
+			return $result;
+	}
+
+	public function escrowDispute ($params)
+	{
+			$result = $this->SteemLayer->call('escrow_dispute', $params);
+			return $result;
+	}
+
+	public function escrowRelease ($params)
+	{
+			$result = $this->SteemLayer->call('escrow_release', $params);
+			return $result;
+	}
+
+	public function pow2 ($params)
+	{
+			$result = $this->SteemLayer->call('pow2', $params);
+			return $result;
+	}
+
+	public function escrowApprove ($params)
+	{
+			$result = $this->SteemLayer->call('escrow_approve', $params);
+			return $result;
+	}
+
+	public function transferToSavings ($params)
+	{
+			$result = $this->SteemLayer->call('transfer_to_savings', $params);
+			return $result;
+	}
+
+	public function transferFromSavings ($params)
+	{
+			$result = $this->SteemLayer->call('transfer_from_savings', $params);
+			return $result;
+	}
+
+	public function cancelTransferFromSavings ($params)
+	{
+			$result = $this->SteemLayer->call('cancel_transfer_from_savings', $params);
+			return $result;
+	}
+
+	public function customBinary ($params)
+	{
+			$result = $this->SteemLayer->call('custom_binary', $params);
+			return $result;
+	}
+
+	public function declineVotingRights ($params)
+	{
+			$result = $this->SteemLayer->call('decline_voting_rights', $params);
+			return $result;
+	}
+
+	public function resetAccount ($params)
+	{
+			$result = $this->SteemLayer->call('reset_account', $params);
+			return $result;
+	}
+
+	public function setResetAccount ($params)
+	{
+			$result = $this->SteemLayer->call('set_reset_account', $params);
+			return $result;
+	}
+
+	public function claimRewardBalance ($params)
+	{
+			$result = $this->SteemLayer->call('claim_reward_balance', $params);
+			return $result;
+	}
+
+	public function delegateVestingShares ($params)
+	{
+			$result = $this->SteemLayer->call('delegate_vesting_shares', $params);
+			return $result;
+	}
+
+	public function accountCreateWithDelegation ($params)
+	{
+			$result = $this->SteemLayer->call('account_create_with_delegation', $params);
+			return $result;
+	}
+
+	public function fillConvertRequest ($params)
+	{
+			$result = $this->SteemLayer->call('fill_convert_request', $params);
+			return $result;
+	}
+
+	public function commentReward ($params)
+	{
+			$result = $this->SteemLayer->call('comment_reward', $params);
+			return $result;
+	}
+
+	public function liquidityReward ($params)
+	{
+			$result = $this->SteemLayer->call('liquidity_reward', $params);
+			return $result;
+	}
+
+	public function interest ($params)
+	{
+			$result = $this->SteemLayer->call('interest', $params);
+			return $result;
+	}
+
+	public function fillVestingWithdraw ($params)
+	{
+			$result = $this->SteemLayer->call('fill_vesting_withdraw', $params);
+			return $result;
+	}
+
+	public function fillOrder ($params)
+	{
+			$result = $this->SteemLayer->call('fill_order', $params);
+			return $result;
+	}
+
+	public function fillTransferFromSavings ($params)
+	{
+			$result = $this->SteemLayer->call('fill_transfer_from_savings', $params);
 			return $result;
 	}
 
