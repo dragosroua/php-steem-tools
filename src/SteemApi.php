@@ -1104,5 +1104,25 @@ class SteemApi
 			$result = $this->SteemLayer->call('fill_transfer_from_savings', $params);
 			return $result;
 	}
+	
+	// Resource Credit APIs
+	
+	public function findRCAccounts ($params)
+	{
+			$result = $this->SteemLayer->call('rc.find_rc_accounts', $params);
+			return $result;
+	}
+	
+	public function getResourcePools ($params)
+	{
+			$result = $this->SteemLayer->call('rc.get_resource_pools', $params);
+			return $result;
+	}
+	
+	public function getResourceParams ($params)
+	{
+			$result = $this->SteemLayer->call('rc.get_resource_params', $params);
+			return $result;
+	}
 
 }
