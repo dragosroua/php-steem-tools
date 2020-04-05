@@ -1,7 +1,7 @@
 {
-    "name": "dragos-roua/php-steem-tools",
-    "description": "Tools to interact with the Steem blockchain.",
-    "keywords": ["steemit", "blockchain", "package"],
+    "name": "dragos-roua/php-hive-tools",
+    "description": "Tools to interact with the Hive blockchain.",
+    "keywords": ["hive", "blockchain", "package"],
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "DragosRoua\\PHPSteemTools\\": "src/"
+            "DragosRoua\\PHPHiveTools\\": "src/"
         }
     }
 }
