@@ -1,7 +1,7 @@
-PHP Steem Tools
+PHP HIVE Tools
 =========================
 
-A collection of PHP tools to interact with the [Steem](https://github.com/steemit/steem) blockchain. **PHP Steem Tools** is in a very early stage.
+A collection of PHP tools to interact with the [Hive](https://github.com/openhive-network/hive) blockchain. **PHP Hive Tools** is in a very early stage.
 
 Features
 --------
@@ -18,7 +18,7 @@ Websocket: "textalk/websocket": "1.0.*" (added by default to composer.json).
 Installation
 ------------
 
-`composer require dragos-roua/php-steem-tools`
+`composer require dragos-roua/php-hive-tools`
 
 Examples
 --------
@@ -31,7 +31,14 @@ How to contribute
 Fork this, implement an awesome feature, test it and then submit a pull request.
 
 
-Projects using PHP Steem Tools
+Projects using PHP Hive Tools
 ------------------------------
 
-* [steem.supply](http://steem.supply)
+* [hive.supply](http://hive.supply)
+
+
+Related Projects
+-----------------------------
+
+* [php Hive tools](https://github.com/dragosroua/php-steem-tools) - initial release for the Steem blockchain
+* [steem.supply](https://steem.supply)
